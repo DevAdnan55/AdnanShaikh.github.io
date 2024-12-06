@@ -1,0 +1,43 @@
+<!-- 
+<section id="blogs" class="custom-container-height-blogs text-center" data-aos="fade-up">
+    <div class="container">
+        <!-- Blogs Heading -->
+        <h1 class="blog-heading" data-aos="fade-up">Blogs</h1>
+        <div class="row mt-4">
+            <!-- Blog 1 -->
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="card bg-dark text-light">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Blog 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Title 1</h5>
+                        <p class="card-text">Brief description of Blog 1.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog 2 -->
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card bg-dark text-light">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Blog 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Title 2</h5>
+                        <p class="card-text">Brief description of Blog 2.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog 3 -->
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card bg-dark text-light">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Blog 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Title 3</h5>
+                        <p class="card-text">Brief description of Blog 3.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
