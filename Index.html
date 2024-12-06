@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        
+        .custom-container-height-home {
+    height: 650px; /* Full viewport height */
+    background-image: url('images/home/ai-generated-8759915.jpg'); /* Correct image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.custom-container-height-about {
+    height: 600px; /* Adjust height to fit content */
+    background-color: black; /* Background color */
+}
+
+.custom-container-height-blogs {
+    height: 600px; /* Adjust height to fit content */
+    background-color: black; /* Background color */
+}
+
+.custom-container-height-projects {
+    height: 700px; /* Adjust height to fit content */
+    background-color: black; /* Background color */
+}
+
+.custom-container-height-contactme {
+    height: 650px; /* Adjust height to fit content */
+    background-color: black; /* Background color */
+}
+
+.custom-container-height-skills {
+    height: 700px; /* Adjust height to fit content */
+    background-color: black; /* Background color */
+    color: white; /* White text for contrast */
+    padding: 20px;
+    overflow-y: auto; /* Handle content overflow if necessary */
+}
+
+.cta-container{
+    margin-top: 40px;
+}
+
+/* Card hover effects */
+.custom-container-height-projects .card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Smooth card hover effect */
+    }
+
+    .custom-container-height-projects .card:hover {
+        transform: translateY(-10px); /* Lift card on hover */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+    }
+
+    /* Image hover effects */
+    .custom-container-height-projects .card img {
+        max-height: 200px;
+        object-fit: cover; /* Ensure images maintain aspect ratio */
+        transition: transform 0.3s ease-in-out; /* Image hover effect */
+    }
+
+    .custom-container-height-projects .card:hover img {
+        transform: scale(1.1); /* Scale up on hover */
+    }
+
+.about-heading {
+    color: #d09a64; /* Blue color for heading */
+    border-bottom: 2px solid #ffffff; /* Underline */
+    display: inline-block;
+    padding: 30px 0px 0px 0px;/* Top, Right, Bottom, Left */
+}
+
+.blog-heading {
+    color: #d09a64; /* Gold color for heading */
+    border-bottom: 2px solid #ffffff; /* White underline */
+    display: inline-block;
+    padding: 20px 0 0 0; /* Top padding, no padding on sides or bottom */
+}
+
+.project-heading {
+    color: #d09a64; /* Blue color for heading */
+    border-bottom: 2px solid #ffffff; /* Underline */
+    display: inline-block;
+    padding: 20px 0px 0px 0px;/* Top, Right, Bottom, Left */
+}
+
+.contact-heading {
+    color: #d09a64; /* Blue color for heading */
+    border-bottom: 2px solid #ffffff; /* Underline */
+    display: inline-block;
+    padding: 20px 0px 0px 0px;/* Top, Right, Bottom, Left */
+}
+
+.skill-heading {
+    color: #d09a64; /* Blue color for heading */
+    border-bottom: 2px solid #ffffff; /* Underline */
+    display: inline-block;
+    padding: 20px 0px 0px 0px;/* Top, Right, Bottom, Left */
+}
+
+.custom-name-heading-padding {
+    padding-top: 10px; 
+  
+    padding-bottom: 10px; 
+}
+
+.profile-pic {
+    width: 350px; /* Explicitly set the width */
+    height: 350px; /* Explicitly set the height */
+    object-fit: fill; /* Ensures image scales and crops properly */
+    border: 5px solid #fff; /* White border */
+    border-radius: 100%; /* Circular shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
+}
+
+
+.about-description {
+    font-size: 16px; /* Text size */
+    color: #ddd; /* Light text color */
+    padding:0px 0px 0px 0px; 
+}
+
+
+.custom-container-height-home h1 {
+    font-weight: bold; /* Makes the text bold */
+    font-family: 'Roboto', sans-serif; /* Apply the Roboto font */
+    padding: 150px 15px 0px 15px; /* Top, Right, Bottom, Left */
+}
+
+.custom-container-height-home h2 {
+    font-weight: bold; /* Makes the text bold */
+    font-family: 'Poppins', sans-serif; /* Apply the Poppins font */
+    padding: 0px 15px 0px 15px; /* Top, Right, Bottom, Left */
+}
+
+.custom-container-height-home h3 {
+    font-weight: bold; /* Makes the text bold */
+    font-family: 'Poppins', sans-serif; /* Apply the Poppins font */
+    padding: 0px 15px 0px 15px; /* Top, Right, Bottom, Left */
+}
+
+.role-container {
+        position: relative;
+        overflow: hidden; /* Ensures text doesn't overflow the container */
+        height: 60px; /* Adjust height based on your text size */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .role-text {
+        position: absolute;
+        white-space: nowrap; /* Prevents line wrapping */
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in-out;
+    }
+
+    /* Fade-out and slide to left */
+    @keyframes fade-out-slide-left {
+        0% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Fade-in and slide from right */
+    @keyframes fade-in-slide-right {
+        0% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Smooth transition for color fading */
+    .changing-color {
+        transition: color 1.5s ease-in-out;
+    }
+
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+    /* Transparent navbar with blur effect */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.6) !important; /* Slight transparency */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+}
+
+.nav-link {
+    color: white !important; /* Set the text color to white */
+    font-weight: bold; /* Make the text bold */
+    padding: 0.5rem 1rem; /* Add padding for better spacing */
+    transition: color 0.3s ease-in-out; /* Smooth transition for hover effects */
+    text-transform: uppercase; /* Optional: Make text uppercase for a modern look */
+}
+
+/* Navbar link hover animations */
+        .nav-hover {
+            position: relative;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-hover:hover {
+            color: #d09a64; /* Change link color on hover */
+        }
+
+        /* Underline effect on hover */
+        .nav-hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d09a64;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-hover:hover::after {
+            width: 100%; /* Expand underline to full width on hover */
+        }
+
+        /* Smooth fade-in effect for the navbar */
+        [data-aos="fade-down"] {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        [data-aos="fade-down"].aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card img {
+            max-height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out; /* Image hover effect */
+        }
+
+        .card:hover img {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        .card:hover {
+            transform: translateY(-10px); /* Lift card on hover */
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+        }
+
+        .btn-primary {
+    background-color: #ff5733 !important; /* Override Bootstrap default */
+    border-color: #ff5733 !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+        img.rounded-circle {
+    max-width: 200px; /* Adjust size as needed */
+    border: 4px solid white; /* Adds a nice border to the profile image */
+}
+
+
+/* Add some extra hover effects to the social media icons */
+.social-links a:hover {
+    color: #ff7e5f; /* Change icon color on hover */
+    transform: scale(1.2); /* Slight zoom-in effect */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Change the background color of the form fields on focus */
+.form-control:focus {
+    border-color: #ff7e5f; /* Border color */
+    box-shadow: 0 0 10px rgba(255, 126, 95, 0.5); /* Glow effect */
+}
+
+
+
+       /* Footer Styles */
+      
+        footer {
+            background-color: #333;
+            color: #fff;
+            position: relative; /* Ensure it doesn't overlap content */
+            width: 100%;       /* Make footer span full width */
+            padding: 20px 0;    /* Adjust padding for spacing */
+        }
+
+        /* Optional: Ensure footer stays at the bottom of the page */
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .container {
+            padding: 0 15px; /* Optional padding for consistency */
+        }
+
+        /* Smooth animation for fade-up */
+        footer[data-aos="fade-up"] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        /* When AOS animation is triggered */
+        footer[data-aos="fade-up"].aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        footer {
+            position: fixed;
+            bottom: 0;
+        }
+
+
+#skills p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.skill-description {
+    padding-top: 20;
+    padding-bottom: 10;
+}
+
+.skill-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-icon {
+    width: 40px;
+    height: 40px;
+    filter: none; /* Keep icons colored */
+}
+
+.skill-bar {
+    flex: 1;
+    height: 10px;
+    background-color: #333; /* Darker bar background */
+    border-radius: 5px;
+    margin: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: #4A90E2; /* Progress bar color */
+    border-radius: 5px;
+}
+
+.skill-percentage {
+    width: 50px;
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+ 
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" data-aos="fade-down">
+      <div class="container">
+          <a class="navbar-brand" href="#">My Portfolio</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link nav-hover" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link nav-hover" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link nav-hover" href="#skills">skills</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link nav-hover" href="#projects">Projects</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link nav-hover" href="#contact">Contact</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  
+
+
+<!-- Home Section -->
+<section id="home" class="text-white text-center" data-aos="fade-in">
+    <div class="custom-container-height-home">
+        <h1 class="display-6">Hi, I'm</h1>
+        <!-- Corrected id to "name" -->
+        <h2 id="name" class="display-4 changing-color">ADNAN SHAIKH</h2>
+        <div class="role-container">
+            <h2 class="display-4 role-text" id="dynamic-role">Data Analyst</h2>
+        </div>
+        
+        <!-- Resume Download Button -->
+        <div class="cta-container" data-aos="fade-up" data-aos-duration="1600">
+            <a href="resume/Resume.pdf" class="btn btn-primary btn-lg " download>Download Resume</a>
+        </div>
+    </div>
+</section>
+
+  
+  
+<!-- About Section -->
+<section id="about" class="custom-container-height-about text-center" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+        <!-- About Heading -->
+        <h1 class="about-heading" data-aos="fade-up" data-aos-duration="1000">About Me</h1>
+        <div class="row align-items-center">
+            <!-- Profile Image -->
+            <div class="col-md-5 text-center" data-aos="fade-right" data-aos-duration="1000">
+                <img src="images/about/5332.jpg" class="profile-pic" alt="Profile Picture">
+            </div>
+            <!-- About Text -->
+            <div class="col-md-7 text-start text-white" data-aos="fade-left" data-aos-duration="1000">
+                <h2 class="fw-bold custom-name-heading-padding">I'm Adnan Shaikh</h2>
+                <p class="about-description">
+                    As a dedicated data analyst with a passion for solving complex business problems, I specialize in utilizing cutting-edge tools and techniques to uncover insights and drive strategic decisions. With hands-on experience in data visualization, statistical analysis, and machine learning, I work with a diverse range of data sources to provide actionable insights that help businesses thrive.
+
+I have collaborated with teams to develop ETL processes, design and implement Power BI dashboards, and ensure data integrity through data cleansing and preparation. My experience spans across various industries, with a focus on e-commerce and customer behavior analysis, where I've successfully led projects to enhance customer retention, improve reporting accuracy, and optimize business strategies.
+
+Currently, I am expanding my expertise by working on machine learning models and diving deep into healthcare applications for AI-driven solutions. With a keen interest in both data science and business analytics, I continuously seek opportunities to grow, innovate, and make a positive impact.
+
+Let's connect and explore how data can transform your business.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skill Section -->
+<section id="skills" class="custom-container-height-skills text-center">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="skill-heading">Skills</h1>
+        <p class="skill-description" data-aos="fade-up" data-aos-duration="1200">
+            In the journey of life, your skills are the weapons you carry. Without honing and sharpening them, you’re simply standing on the battlefield, hoping for success to come your way. Skills are not innate – they are developed, refined, and perfected through constant effort, learning, and experience. Every skill, no matter how small or specialized, plays a crucial role in your personal and professional growth. They empower you to overcome challenges, seize opportunities, and ultimately achieve your goals.
+
+            Whether it's mastering a programming language, learning to analyze data, or cultivating creativity, each skill you acquire shapes your future. The more diverse your skill set, the more adaptable you become, opening doors to new possibilities and ensuring you stay competitive in an ever-changing world. By investing in your skills today, you're investing in your success tomorrow. Every step you take to improve yourself brings you closer to your aspirations. So, never stop learning, growing, and sharpening your abilities – they are your most valuable assets.
+        </p>
+
+        <!-- Skills List -->
+        <div class="skill" data-aos="fade-right" data-aos-duration="1500">
+            <div class="skill-details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo" class="skill-icon">
+                <span>Python</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%;"></div>
+            </div>
+            <span class="skill-percentage">95%</span>
+        </div>
+        <div class="skill" data-aos="fade-left" data-aos-duration="1500">
+            <div class="skill-details">
+                <img src="icons/SQL.png" alt="SQL Logo" class="skill-icon">
+                <span>SQL</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%;"></div>
+            </div>
+            <span class="skill-percentage">75%</span>
+        </div>
+        <div class="skill" data-aos="fade-right" data-aos-duration="1500">
+            <div class="skill-details">
+                <img src="icons/sklearn-logo.png" alt="sklearn Logo" class="skill-icon">
+                <span>sklearn</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%;"></div>
+            </div>
+            <span class="skill-percentage">80%</span>
+        </div>
+        <div class="skill" data-aos="fade-left" data-aos-duration="1500">
+            <div class="skill-details">
+                <img src="icons/PowerBI.png" alt="Power BI Logo" class="skill-icon">
+                <span>Power BI</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%;"></div>
+            </div>
+            <span class="skill-percentage">85%</span>
+        </div>
+        <div class="skill" data-aos="fade-right" data-aos-duration="1500">
+            <div class="skill-details">
+                <img src="icons/TensorFlow.png" alt="TensorFlow Logo" class="skill-icon">
+                <span>TensorFlow</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%;"></div>
+            </div>
+            <span class="skill-percentage">80%</span>
+        </div>
+        <div class="skill" data-aos="fade-left" data-aos-duration="1500">
+            <div class="skill-details">
+                <img src="icons/excel.png" alt="Excel Logo" class="skill-icon">
+                <span>Excel</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%;"></div>
+            </div>
+            <span class="skill-percentage">85%</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- Projects Section -->
+<section id="projects" class="custom-container-height-projects text-center" data-aos="fade-up">
+    <div class="container">
+        <!-- Section Heading -->
+        <h1 class="project-heading">Projects</h1>
+        <div class="row mt-4">
+            <!-- Project 1 -->
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card bg-dark text-white">
+                    <img src="images/projects/Trash_detection.png" class="card-img-top" alt="Project 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Garbage Object Detection</h5>
+                        <p class="card-text">
+                            This project focuses on object detection using the TACO (Trash Annotations for Clean Objects) dataset. By applying deep learning techniques and utilizing models like YOLOv8, it identifies and classifies various types of trash in images. The goal is to automate waste classification and improve recycling efforts, contributing to environmental sustainability.
+                        </p>
+                        <a href="https://github.com/mqarmout/TACO_object_detection" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card bg-dark text-white">
+                    <img src="images/projects/hate-speech.webp" class="card-img-top" alt="Project 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Hate Speech Detection</h5>
+                        <p class="card-text">
+                            
+                            This project uses a Bidirectional LSTM model to detect and classify hate speech in text. By leveraging deep learning and natural language processing techniques, it identifies harmful content in tweets. The model is trained and evaluated for optimal performance in accurately distinguishing between hateful and non-hateful speech.
+                        </p>
+                        <a href="https://github.com/mqarmout/hate_speech_detection_system" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card bg-dark text-white">
+                    <img src="images/projects/Sentemantal_analysis.jpg" class="card-img-top" alt="Project 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Sentimental Analysis</h5>
+                        <p class="card-text">
+                            The project performs sentiment analysis on Amazon product reviews to classify them as positive or negative. Using NLP techniques, it automatically analyzes customer feedback, providing businesses with valuable insights into product satisfaction and enabling them to improve the customer experience.
+                        </p>
+                        <a href="https://github.com/mqarmout/amazon_sentiment_analysis" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="custom-container-height-contactme text-center" data-aos="fade-up" data-aos-duration="1200">
+    <div class="container">
+        <!-- Section Heading -->
+        <h1 class="contact-heading">Contact Me</h1>
+        <div class="row mt-4">
+            <!-- Contact Info (Social Icons or Other Info) -->
+            <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
+                <div class="contact-info">
+                    <h3 class="text-white">Get in Touch</h3>
+                    <p class="text-white">Feel free to reach out to me for any queries, projects, or collaboration opportunities. You can use the form below or connect with me through social media.</p>
+                    
+                    <!-- Social Media Links (Add Icons) -->
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/adnanshaikh218557/" class="text-white me-3" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="mailto:adnanshaikh218557@gmail.com" class="text-white me-3"><i class="fas fa-envelope fa-2x"></i></a>
+                        <a href="https://github.com/DevAdnan55" class="text-white me-3" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+                <form action="#" method="POST" class="bg-dark p-4 rounded shadow-lg">
+                    <div class="form-group mb-3">
+                        <label for="name" class="text-white">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email" class="text-white">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="message" class="text-white">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-3" data-aos="zoom-in" data-aos-duration="800">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white" data-aos="fade-up">
+      <div class="container text-center">
+          <p class="m-0">© 2024 Adnan Shaikh. All rights reserved.</p>
+      </div>
+    </footer>
+  
+<!-- FontAwesome Icons (Include in Head or Body) -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false
+        });
+    </script>
+    <script>
+      // Array of roles to display
+      const roles = ["Data Analyst", "Data Engineer"];
+      let currentIndex = 0;
+
+      // Function to update the role text
+      function updateRole() {
+          const roleElement = document.getElementById("dynamic-role");
+
+          // Add fade-out-slide-left animation
+          roleElement.style.animation = "fade-out-slide-left 1.5s forwards";
+
+          // Wait for fade-out animation to complete before updating the text
+          setTimeout(() => {
+              currentIndex = (currentIndex + 1) % roles.length; // Update index and loop back
+              roleElement.textContent = roles[currentIndex]; // Update the text
+
+              // Add fade-in-slide-right animation
+              roleElement.style.animation = "fade-in-slide-right 1.5s forwards";
+          }, 1500); // Matches fade-out animation duration
+      }
+
+      // Change the role text every 4.5 seconds (3 seconds animation + 2 seconds hold)
+      setInterval(() => {
+          updateRole();
+
+          // Hold the next text for 2 seconds after fade-in
+          setTimeout(() => {}, 2000);
+      }, 4500);
+    </script>
+
+<script>
+  // Array of colors
+  const colors = ["#FFA07A", "#FFDAB9", "#FF7F50", "#FF8C00", "#FF4500"];
+  let currentColorIndex = 0;
+
+  // Function to change color with smooth fade effect
+  function changeColorWithFade() {
+      const nameElement = document.getElementById("name");
+
+      // Cycle through the colors
+      currentColorIndex = (currentColorIndex + 1) % colors.length;
+      nameElement.style.color = colors[currentColorIndex]; // Update color
+  }
+
+  // Change color every 3 seconds
+  setInterval(changeColorWithFade, 3000);
+</script>
+
+
+  
+
+  
+</body>
+</html>
